@@ -1,4 +1,4 @@
-package com.meditrack_backend.Utility;
+package com.meditrack.utility;
 
 public class Constans
 {

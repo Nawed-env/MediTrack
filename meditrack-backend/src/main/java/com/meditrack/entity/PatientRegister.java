@@ -1,4 +1,4 @@
-package com.meditrack_backend.Entity;
+package com.meditrack.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

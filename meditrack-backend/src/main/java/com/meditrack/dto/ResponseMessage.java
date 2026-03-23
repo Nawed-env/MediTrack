@@ -1,4 +1,4 @@
-package com.meditrack_backend.DTO;
+package com.meditrack.dto;
 
 import java.util.List;
 

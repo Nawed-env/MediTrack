@@ -1,4 +1,4 @@
-package com.meditrack_backend.DTO;
+package com.meditrack.dto;
 
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
