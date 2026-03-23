@@ -1,0 +1,19 @@
+# Sensitive - Never push these
+meditrack-backend/src/main/resources/application.properties
+meditrack-frontend/.env
+
+# Dependencies & Build
+meditrack-backend/target/
+meditrack-frontend/node_modules/
+meditrack-frontend/dist/
+
+# IDE - STS/Eclipse
+.sts4-cache/
+.settings/
+.classpath
+.project
+*.iml
+.idea/
+
+# VS Code / Cursor
+.vscode/
