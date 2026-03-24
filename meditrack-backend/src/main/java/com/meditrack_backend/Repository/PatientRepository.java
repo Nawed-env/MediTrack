@@ -3,10 +3,10 @@ package com.meditrack_backend.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.meditrack_backend.Entity.PatientRegister;
+import com.meditrack_backend.Entity.Patient;
 
 @Repository
-public interface PatientRegisterRepository extends JpaRepository<PatientRegister, Long>
+public interface PatientRepository extends JpaRepository<Patient, Long>
 {
 
 }
