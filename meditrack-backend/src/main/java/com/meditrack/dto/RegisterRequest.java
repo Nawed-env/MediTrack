@@ -1,6 +1,22 @@
+//package com.meditrack.dto;
+//
+//import lombok.Data;
+//
+//@Data
+//public class RegisterRequest
+//{
+//   private String email;
+//   private String password;
+//}
 package com.meditrack.dto;
 
-public class RegisterRequest {
+import lombok.Data;
+
+@Data
+public class RegisterRequest
+{
+	
+	private Long id;
     private String name;
     private String email;
     private String password;

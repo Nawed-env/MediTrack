@@ -1,4 +1,4 @@
-package com.meditrack.service;
+package com.meditrack.SecurityService;
 
 import java.util.Map;
 

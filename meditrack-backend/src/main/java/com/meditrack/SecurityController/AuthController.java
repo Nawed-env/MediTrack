@@ -1,9 +1,10 @@
-package com.meditrack.controller;
+package com.meditrack.SecurityController;
 
+import com.meditrack.SecurityService.AuthService;
 import com.meditrack.dto.ApiResponse;
 import com.meditrack.dto.LoginRequest;
 import com.meditrack.dto.RegisterRequest;
-import com.meditrack.service.AuthService;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
