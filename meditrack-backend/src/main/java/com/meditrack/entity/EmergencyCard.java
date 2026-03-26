@@ -38,6 +38,9 @@ public class EmergencyCard
 	@Column(unique = true, nullable = false)
 	private String qrToken;
 	
+	@Column(name = "allergies")
+	private String allergies;
+	
 	@Column(name  = "bloodGroup")
 	private String bloodGroup;
 	

@@ -47,7 +47,7 @@ public class PatientServiceImpl implements PatientService
 		return getCurrentPatient();
 	}
 
-	private Patient getCurrentPatient()
+	public Patient getCurrentPatient()
 	{
 		String email = SecurityContextHolder.getContext()
 				.getAuthentication().getName();
