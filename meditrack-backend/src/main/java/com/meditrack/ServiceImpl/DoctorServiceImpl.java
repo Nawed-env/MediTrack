@@ -42,7 +42,7 @@ public class DoctorServiceImpl
 	public List<Patient> getMyPatients()
 	{
         Doctor doctor = getCurrentDoctor();
-        return medicalRepo.findByDoctorIdOderByCreatedAtDesc(doctor.getId()).stream()
+        return medicalRepo.findByDoctorIdOrderByCreatedDateDesc(doctor.getId()).stream()
         		                                                            .map(MedicalRecord::getPatient)
         		                                                            .distinct()
         		                                                            .toList();
@@ -51,7 +51,7 @@ public class DoctorServiceImpl
 	public List<MedicalRecord> getPatientRecords(Long id)
 	{
 		getCurrentDoctor();
-		List<MedicalRecord> list = medicalRepo.findByPatientIdOderByCreatedAtDesc(id);
+		List<MedicalRecord> list = medicalRepo.findByPatientIdOrderByCreatedDateDesc(id);
 		return list;
 	}
 

@@ -23,7 +23,7 @@ public class MedicalRecordServiceImpl
     
 	public List<MedicalRecord> getMyRecords()
 	{
-		List<MedicalRecord> list = medicalRepo.findByPatientIdOderByCreatedAtDesc(getCurrentpatient().getId());
+		List<MedicalRecord> list = medicalRepo.findByPatientIdOrderByCreatedDateDesc(getCurrentpatient().getId());
 		return list;
 	}
 
