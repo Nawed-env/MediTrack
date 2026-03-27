@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.meditrack.Service.PatientService;
 import com.meditrack.dto.PatientDto;
 import com.meditrack.entity.Patient;
 import com.meditrack.entity.User;
@@ -15,13 +14,12 @@ import com.meditrack.repository.PatientRepository;
 import com.meditrack.repository.UserRepository;
 
 @Service
-public class PatientServiceImpl implements PatientService
+public class PatientServiceImpl 
 {
 
 	@Autowired private PatientRepository patientRepo;
 	@Autowired private UserRepository userRepo;
 
-	@Override
 	public Patient newRegister(PatientDto patientdto)
 	{
        Patient pr = new Patient();
@@ -33,7 +31,6 @@ public class PatientServiceImpl implements PatientService
        return patientRepo.save(pr);
 	}
 
-	@Override
 	public Patient getPatientByid(Long id)
 	{
 		Optional<Patient> byId = patientRepo.findById(id);
@@ -41,7 +38,6 @@ public class PatientServiceImpl implements PatientService
 		return patient;
 	}
 
-	@Override
 	public Patient getMyProfile()
 	{
 		return getCurrentPatient();
@@ -57,7 +53,6 @@ public class PatientServiceImpl implements PatientService
     .orElseThrow(() -> new RuntimeException("Patient profile not found"));
 	}
 	
-	@Override
 	public List<Patient> getAllPatients()
 	{
 		List<Patient> all = patientRepo.findAll();
@@ -65,7 +60,6 @@ public class PatientServiceImpl implements PatientService
 		
 	}
 
-	@Override
 	public Patient updateProfile(PatientDto dto)
 	{
 		Patient p = getCurrentPatient();

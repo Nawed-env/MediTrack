@@ -11,11 +11,11 @@ import com.meditrack.entity.MedicalRecord;
 public interface MedicalRecordRepository extends JpaRepository<MedicalRecord, Long>
 {
 
-	List<MedicalRecord> findByDoctorIdOderByCreatedAtDesc(Long id);
+	List<MedicalRecord> findByDoctorIdOrderByCreatedDateDesc(Long id);
 
-	List<MedicalRecord> findByPatientIdOderByCreatedAtDesc(Long id);
+	List<MedicalRecord> findByPatientIdOrderByCreatedDateDesc(Long id);
 
-	@Query("SELECT r FROM MedicalRecord r WHERE r.patient.id = :patientId ORDER BY r.createdAt DESC")
+	@Query("SELECT r FROM MedicalRecord r WHERE r.patient.id = :patientId ORDER BY r.createdDate DESC")
     List<MedicalRecord> findTimelineByPatientId(@Param("patientId") Long patientId);
 
 }
