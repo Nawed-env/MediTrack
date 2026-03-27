@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import com.meditrack.Service.DoctorService;
 import com.meditrack.dto.MedicalRecordDto;
 import com.meditrack.entity.Doctor;
 import com.meditrack.entity.MedicalRecord;
@@ -18,14 +17,13 @@ import com.meditrack.repository.PatientRepository;
 import com.meditrack.repository.UserRepository;
 
 @Service
-public class DoctorServiceImpl implements DoctorService
+public class DoctorServiceImpl 
 {
     @Autowired private DoctorRepository doctorRepo;
     @Autowired private UserRepository userRepo;
     @Autowired private MedicalRecordRepository medicalRepo;
     @Autowired private PatientRepository patientRepo;
 
-	@Override
 	public Doctor getDoctorProfile()
 	{
 		return getCurrentDoctor();
@@ -41,7 +39,6 @@ public class DoctorServiceImpl implements DoctorService
 		return doctorRepo.findByUserId(user.getId()).orElseThrow(() -> new RuntimeException("Doctor profile is not found"));
 	}
 
-	@Override
 	public List<Patient> getMyPatients()
 	{
         Doctor doctor = getCurrentDoctor();
@@ -51,7 +48,6 @@ public class DoctorServiceImpl implements DoctorService
         		                                                            .toList();
 	}
 
-	@Override
 	public List<MedicalRecord> getPatientRecords(Long id)
 	{
 		getCurrentDoctor();
@@ -59,7 +55,6 @@ public class DoctorServiceImpl implements DoctorService
 		return list;
 	}
 
-	@Override
 	public MedicalRecord addRecord(Long patientId, MedicalRecordDto dto)
 	{
 		Doctor doctor = getCurrentDoctor();
@@ -77,7 +72,6 @@ public class DoctorServiceImpl implements DoctorService
 		return medicalRepo.save(record);
 	}
 
-	@Override
 	public MedicalRecord updateNote(Long id, String note)
 	{
 		Doctor doctor = getCurrentDoctor();
@@ -91,7 +85,6 @@ public class DoctorServiceImpl implements DoctorService
 	        return medicalRepo.save(record);
 	}
 
-	@Override
 	public void deleteRecord(Long id)
 	{
 		Doctor doctor = getCurrentDoctor();

@@ -38,18 +38,13 @@ public class MedicalRecordServiceImpl
 		return patient;
 	}
 
-//	public List<MedicalRecord> getTimeLine()
-//	{
-//		List<MedicalRecord> timelineByPatientId = medicalRepo.findTimelineByPatientId(getCurrentpatient().getId());
-//		
-//			return timelineByPatientId;
-//	}
-
+	 // ── Anyone views single record by ID ──
 	public MedicalRecord getById(Long id)
 	{
 		return medicalRepo.findById(id).orElseThrow(() -> new RuntimeException("Records not found"));
 	}
 
+	 // ── Patient self-uploads a report ──
 	public MedicalRecord uploadRecords(MedicalRecordDto dto)
 	{
 		Patient patient = getCurrentpatient();
@@ -62,6 +57,7 @@ public class MedicalRecordServiceImpl
 		return save;
 	}
 
+	// ── Patient views health timeline ──
 	public List<MedicalRecord> getTimeLine()
 	{
 		List<MedicalRecord> timelineByPatientId = medicalRepo.findTimelineByPatientId(getCurrentpatient().getId());

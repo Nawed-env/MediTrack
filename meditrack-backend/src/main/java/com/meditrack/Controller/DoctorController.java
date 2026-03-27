@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.meditrack.Service.DoctorService;
+import com.meditrack.ServiceImpl.DoctorServiceImpl;
 import com.meditrack.dto.MedicalRecordDto;
 import com.meditrack.dto.ResponseMessage;
 import com.meditrack.entity.Doctor;
@@ -31,7 +31,7 @@ import com.meditrack.utility.Constans;
 @PreAuthorize("hasRole('DOCTOR')")
 public class DoctorController
 {
-    @Autowired private DoctorService doctorService;
+    @Autowired private DoctorServiceImpl doctorService;
     
     @GetMapping("/profile")
     public ResponseEntity<ResponseMessage> getProfile()
